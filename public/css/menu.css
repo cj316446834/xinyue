@@ -1,0 +1,78 @@
+#menu_bg{ left:0;top:0;position:relative;z-index:11;height:50px;width:700px;right:0; float:right;}
+#menu_bg .imenu_bg{width:700px;height:50px;margin:0 auto;position:relative;top:0;}
+.navspecial{ width:90px;font-size:14px;height:50px;line-height:49px; float:right; text-align:right;}
+.imenu{
+	width:140px;
+	height:50px;
+	line-height:49px;
+	text-align:center;
+	font-size:14px;
+	cursor:pointer;
+	float:left;
+}
+.imenu a{ color:#ffffff;text-decoration:none}
+.imenu a:hover{ text-decoration:underline;}
+.imenu_on{width:140px;height:50px;background-color:#FFF;color:#86723E;cursor:pointer; float:left;line-height:49px; text-align:center;font-size:14px;}
+.imenu_on a{color:#86723E;text-decoration:none;}
+.imenu_on a:hover{color:#015d22; text-decoration:underline; }
+.submnu{width:800px; *width:800px;_width:800px;border-top:none; margin:0 auto; display:none; position:absolute; left:0px; top:50px;z-index:1000; background-color:#FFFFFF;filter:alpha(opacity=95);-moz-opacity:0.8;}
+.li_content .itemtitle{font-size:14px; line-height:26px; text-align:left;height:26px;background:url(../images/hp_menu_bigulh3.gif) no-repeat left center; padding-left:10px;}
+
+/*---------------品牌文化中心---------------*/
+#brand{width:800px;height:160px; margin:15px 0 0 15px;}
+#brand ul{ height:120px; float:left; text-align:left;margin-right:10px;width:120px;*width:120px;_width:120px;float:left;}
+#brand ul.li_content li{line-height:30px; text-align:left;height:30px; padding-left:18px;width:120px;}
+#brand ul.li_content li a{ margin-left:6px; font-size:14px;height:30px; line-height:30px;}
+#brand ul.li_content li a:hover{line-height:30px; height:30px; text-decoration: underline;}
+#brand ul.li_content li img{ padding-top:8px;}
+#brand .pic001{ margin-top:10px; float:left;}
+#brand .pic001 img{ float:left;height:90px;width:180px; margin-right:15px;padding:5px;border:1px solid #c9caca;}
+/*---------------品牌文化中心---------------*/
+
+
+/*---------------微整形中心---------------*/
+#micro{width:880px;height:270px; margin:15px 0 0 30px;}
+#micro ul{  height:270px; float:left; text-align:left;margin-right:5px;width:120px;*width:120px;_width:120px;float:left;}
+#micro ul.li_content li{line-height:24px;height:24px; text-align:left; font-weight:normal; width:120px; padding-left:10px;}
+#micro ul.li_content li a{ font-size:12px;}
+#micro ul.li_content li a:hover{line-height:24px; height:24px;text-decoration: underline;}
+#micro ul.li_content li img{ padding-top:8px;}
+#micro .pic001{ margin-top:10px; float:left;}
+#micro .pic001 img{ float:left;height:130px;width:160px; margin-right:10px;padding:5px;border:1px solid #c9caca;}
+#micro .itemtitle span{color:#665833;font-size:14px;}
+/*---------------微整形中心---------------*/
+
+/*---------------整形美容中心---------------*/
+#beauty{height:320px;width:880px;margin:15px 0 0 25px;}
+.s-zx{height:160px; float:left;}
+.s-zx ul{ height:150px;*height:150px; text-align:left;float:left;width:140px;*width:140px;_width:140px;}
+.s-zx ul.li_content li{line-height:24px;height:24px; text-align:left;  padding-left:10px; font-weight:normal;width:140px}
+.s-zx ul.li_content li a{ font-size:12px;}
+.s-zx ul.li_content li a:hover{line-height:24px; height:24px;text-decoration: underline;}
+#beauty .itemtitle span{color:#665833;font-size:14px;}
+/*---------------整形美容中心---------------*/
+
+/*---------------皮肤美容中心---------------*/
+#skin{height:170px;width:880px;margin:15px 0 0 20px;}
+.s-pf{height:170px; float:left;}
+.s-pf ul{ height:150px;*height:150px; text-align:left;float:left;width:150px;*width:150px;_width:150px;}
+.s-pf ul.li_content li{line-height:26px;height:26px; text-align:left; padding-left:10px; font-weight:normal;width:150px;}
+.s-pf ul.li_content li a{ font-size:12px;}
+.s-pf ul.li_content li a:hover{line-height:26px; height:26px;text-decoration: underline;}
+.s-pf ul.li_content li img{ padding-top:8px;}
+#skin .piczx{margin-top:10px; float:left;}
+#skin .piczx img{float:left;height:120px;width:150px; margin-right:10px;padding:5px;border:1px solid #c9caca;}
+#skin .itemtitle span{color:#665833;font-size:14px;}
+/*---------------皮肤美容中心---------------*/
+
+/*---------------私密整形中心---------------*/
+#privacy{width:880px;height:130px; margin:15px 0 0 15px;}
+#privacy ul{  height:140px; float:left; text-align:left;margin-right:5px;width:125px;*width:125px;_width:125px;float:left;}
+#privacy .ul2{  height:140px; float:left; text-align:left;margin-right:5px;width:150px;*width:150px;_width:150px;float:left;}
+#privacy ul.li_content li{line-height:30px;height:30px; text-align:left; padding-left:10px; font-weight:normal;width:125px;}
+#privacy ul.li_content li a{ font-size:14px; }
+#privacy ul.li_content li a:hover{line-height:30px; height:30px;text-decoration: underline;}
+#privacy ul.li_content li img{ padding-top:8px;}
+#privacy .pic001{ margin-top:10px; float:left;}
+#privacy .pic001 img{ float:left;height:100px;width:150px; margin-right:10px;padding:5px;border:1px solid #c9caca;}
+/*---------------私密整形中心---------------*/
