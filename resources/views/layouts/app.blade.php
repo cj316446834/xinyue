@@ -9,6 +9,7 @@
     <link href="/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="/css/theme.css" rel="stylesheet" type="text/css" />
     <link href="/css/indexcss.css" rel="stylesheet" type="text/css" />
+    @yield('style')
     <script src="/javascript/jquery.js" type="text/javascript" ></script>
     <script src="/javascript/jquery.easing.1.3.js" type="text/javascript" ></script>
     <script src="/javascript/jquery.tools-1.2.7.min.js" type="text/javascript" ></script>

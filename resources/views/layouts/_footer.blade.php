@@ -79,7 +79,7 @@
         </div>
         <div class="s_l_b">
             <div class="s_t"><P>官方合作</P></div>
-            <P><img src="images/footer_help_alipay.jpg" /></P>
+            <P><img src="/images/footer_help_alipay.jpg" /></P>
         </div>
     </div>
 </div>
