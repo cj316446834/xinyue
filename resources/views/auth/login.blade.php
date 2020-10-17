@@ -46,8 +46,8 @@
                         </tr>
                         <tr>
                             <td colspan="3" align="center">
-                                <a href="#" target="_blank" style="margin-left:10px;"><img src="/images/other_login_1.png" width="48" height="48" /></a>
-                                <a href="#" target="_blank" style="margin-left:10px;"><img src="/images/other_login_2.png" width="48" height="48" /></a>
+                                <a href="{{route('weibo')}}" target="_blank" style="margin-left:10px;"><img src="/images/other_login_1.png" width="48" height="48" /></a>
+                                <a href="{{ route('qq') }}" target="_blank" style="margin-left:10px;"><img src="/images/other_login_2.png" width="48" height="48" /></a>
                             </td>
 
                         </tr>

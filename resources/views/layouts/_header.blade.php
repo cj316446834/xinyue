@@ -5,7 +5,7 @@
             <div class="user">你好，请<a href="{{ route('login') }}" target="_blank" title="登录">登录</a> 或 <a href="{{ route('register') }}" target="_blank" title="免费注册">免费注册</a></div>
             @else
             <div class="user">你好 <a href="#" target="_blank" title="">{{ Auth::user()->name }}</a>
-                <a class="dropdown-item" id="logout" href="#"
+                <a id="logout" href="#"
                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">退出登录</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
