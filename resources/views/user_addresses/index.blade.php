@@ -15,7 +15,8 @@
                 <P style="padding-top:7px;"><img src="/images/member.jpg" /></P>
                 <div class="text">
                     <P><table width="875" border="0" align="center" cellpadding="12" cellspacing="0">
-                        <tr style="background-color:#2BAEB7; color:#FFFFFF;">
+                        <caption style="background-color:#2BAEB7; color:#FFFFFF; width: 875px;line-height: 400%">收货地址列表<a href="{{ route('user_addresses.create') }}" style="float:right; margin-right: 20px;color: #fff;">新增收货地址</a></caption>
+                        <tr>
                             <td width="77" align="center">收货人 </td>
                             <td width="500" align="center">地址</td>
                             <td width="68" align="center">邮编</td>
@@ -29,7 +30,11 @@
                             <td align="center" class="bline">{{ $address->zip }}</td>
                             <td align="center" class="bline">{{ $address->contact_phone }}</td>
 
-                            <td align="center" class="bline"><a href="#" class="blue" target="_blank">修改</a> | <a href="#" class="blue" target="_blank">删除</a> </td>
+                            <td align="center" class="bline"><a href="{{ route('user_addresses.edit', ['user_address' => $address->id]) }}" class="blue" target="_blank">修改</a> | <form action="{{ route('user_addresses.destroy', ['user_address' => $address->id]) }}" method="post" style="display: inline-block">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button class="btn btn-danger" type="submit" class="blue">删除</button>
+                                </form> </td>
                         </tr>
                         @endforeach
 

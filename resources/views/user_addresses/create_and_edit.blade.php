@@ -14,7 +14,12 @@
                 <div class="www_view">
                     <P style="padding-top:7px;"><img src="/images/member.jpg" /></P>
                     <div class="text">
+                        @if($address->id)
+                            <form class="form-horizontal" role="form" action="{{ route('user_addresses.update', ['user_address' => $address->id]) }}" method="post">
+                                {{ method_field('PUT') }}
+                                @else
                         <form class="form-horizontal" role="form" action="{{ route('user_addresses.store') }}" method="post">
+                            @endif
                             {{ csrf_field() }}
                         <table width="875" border="0" align="center" cellpadding="12" cellspacing="0" style="margin: 0 auto;">
                            <caption style="background-color:#2BAEB7; color:#FFFFFF; width: 875px;line-height: 400%">新增收货地址</caption>
@@ -44,6 +49,7 @@
                         </table>
                             <button type="submit" class="btn btn-primary" style="margin: 0 auto; width: 100px;height: 30px; background: #2BAEB7; border: 0; color: #fff; margin-left: 360px;">提交</button>
                         </form>
+
                     </div>
 
                 </div>

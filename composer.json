@@ -9,15 +9,16 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "encore/laravel-admin": "1.7.15",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
+        "jxlwqq/quill": "^1.0",
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "overtrue/laravel-lang": "^4.1",
-        "socialiteproviders/qq": "^3.0",
-        "socialiteproviders/weibo": "^3.0"
+        "yansongda/pay": "^2.9"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -70,7 +71,7 @@
     "repositories": {
         "packagist": {
             "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
+            "url": "https://mirrors.aliyun.com/composer/"
         }
     }
 }
