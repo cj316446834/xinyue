@@ -20,16 +20,19 @@
                             <td width="145" align="right" class="rline bline">用户名：</td>
                             <td width="361" class="bline">{{ $user->name }}</td>
                             <td width="234" rowspan="13" align="right" valign="top"><img src="/images/comment_bask_1.jpg" width="214" height="230" /></td>
+                            <td><a href="{{ route('users.edit', Auth::id()) }}">完善资料</a></td>
                         </tr>
 
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">性别：</td>
                             <td class="bline">女</td>
                         </tr>
+                        <!--
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">生日：</td>
                             <td class="bline">1990.1.1</td>
                         </tr>
+                        -->
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">兴趣爱好：</td>
                             <td class="bline">购物、旅游</td>
