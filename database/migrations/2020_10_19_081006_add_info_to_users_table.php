@@ -20,8 +20,8 @@ class AddInfoToUsersTable extends Migration
             $table->string('yawp')->nullable();
             $table->string('profession')->nullable();
             $table->string('address')->nullable();
-            $table->integer('qq')->nullable();
-            $table->integer('phone')->nullable();
+            $table->string('qq')->nullable();
+            $table->string('phone')->nullable();
             $table->string('identitycard')->nullable();
         });
     }

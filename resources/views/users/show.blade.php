@@ -25,7 +25,7 @@
 
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">性别：</td>
-                            <td class="bline">女</td>
+                            <td class="bline">{{ $user->sex }}</td>
                         </tr>
                         <!--
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
@@ -35,19 +35,19 @@
                         -->
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">兴趣爱好：</td>
-                            <td class="bline">购物、旅游</td>
+                            <td class="bline">{{ $user->interest }}</td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">对自己不满意的部位：</td>
-                            <td class="bline">眼睛</td>
+                            <td class="bline">{{ $user->yawp }}</td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">职业：</td>
-                            <td class="bline">学生</td>
+                            <td class="bline">{{ $user->profession }}</td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">居住地地址：</td>
-                            <td class="bline">汉口江岸区德玛西亚大道5662号部落小区2栋1101号</td>
+                            <td class="bline">{{ $user->address }}</td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">电子邮箱：</td>
@@ -55,19 +55,16 @@
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">QQ号码：</td>
-                            <td class="bline">22651154112</td>
+                            <td class="bline">{{ $user->qq }}</td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">手机号码：</td>
-                            <td class="bline">17025337425</td>
+                            <td class="bline">{{ $user->phone }}</td>
                         </tr>
-                        <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
-                            <td align="right" class="bline rline">真实姓名：</td>
-                            <td class="bline">卫歆予</td>
-                        </tr>
+
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">身份证号码：</td>
-                            <td class="bline">420002199001012248</td>
+                            <td class="bline">{{ $user->identitycard }}</td>
                         </tr>
                     </table>
                     </P>

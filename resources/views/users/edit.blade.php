@@ -18,7 +18,8 @@
                     <form action="{{ route('users.update', $user->id) }}" method="POST" accept-charset="UTF-8">
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <P><table width="520" border="0" align="center" cellpadding="10" cellspacing="0">
+                        @include('shared._error')
+                        <P><table width="520" border="0" align="center" cellpadding="10" cellspacing="0">
                         <tr>
                             <td height="46" colspan="3" align="center" class="bline"><span>武汉欣悦医疗美容医院承诺绝不会以各种方式泄露您的个人信息。</span></td>
                         </tr>
@@ -31,55 +32,60 @@
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">上传头像：</td>
-                            <td colspan="2" class="bline"><input type="text" name="textfield10" class="input" style="width:300px;"/></td>
+                            <td colspan="2" class="bline"><input type="text" name="avatar" class="input" style="width:300px;"/></td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline"><span>*</span>性别：</td>
                             <td colspan="2" class="bline">
-                                <select name="sex" value="{{ old('name',$user->sex) }}">
-                                    <option value="女">女</option>
-                                    <option value="男">男</option>
-                                    <option value="保密">保密</option>
+                                <select name="sex" id="sex">
+                                    @if (old('sex',$user->sex) == '女')
+                                        <option value="女">女</option>
+                                        <option value="男">男</option>
+                                        @else
+                                        <option value="男">男</option>
+                                        <option value="女">女</option>
+                                    @endif
+
                                 </select>
                             </td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">兴趣爱好：</td>
-                            <td colspan="2" class="bline"><input type="text" name="interest" class="input" value="{{ old('name',$user->interest) }} "style="width:300px;"/></td>
+                            <td colspan="2" class="bline"><input type="text" name="interest" class="input" value="{{ old('interest',$user->interest) }} "style="width:300px;"/></td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">对自己不满意的部位：</td>
-                            <td colspan="2" class="bline"><input type="text" name="yawp" class="input" value="{{ old('name',$user->yawp) }}"  style="width:300px;"/></td>
+                            <td colspan="2" class="bline"><input type="text" name="yawp" class="input" value="{{ old('yawp',$user->yawp) }}"  style="width:300px;"/></td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">职业：</td>
-                            <td colspan="2" class="bline"><input type="text" name="profession" class="input" value="{{ old('name',$user->profession) }}" style="width:200px;"/></td>
+                            <td colspan="2" class="bline"><input type="text" name="profession" class="input" value="{{ old('profession',$user->profession) }}" style="width:200px;"/></td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">居住地地址：</td>
-                            <td colspan="2" class="bline"><input type="text" name="address" class="input" value="{{ old('name',$user->address) }}"  style="width:300px;"/></td>
+                            <td colspan="2" class="bline"><input type="text" name="address" class="input" value="{{ old('address',$user->address) }}"  style="width:300px;"/></td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">电子邮箱：</td>
-                            <td colspan="2" class="bline"><input type="email" name="email" class="input" value="{{ old('name',$user->email) }}" style="width:200px;"/></td>
+                            <td colspan="2" class="bline"><input type="email" name="email" class="input" value="{{ old('email',$user->email) }}" style="width:200px;"/></td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">QQ号码：</td>
-                            <td colspan="2" class="bline"><input type="text" name="qq" class="input"  value="{{ old('name',$user->qq) }}" style="width:200px;"/></td>
+                            <td colspan="2" class="bline"><input type="text" name="qq" class="input"  value="{{ old('qq',$user->qq) }}" style="width:200px;"/></td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
-                            <td align="right" class="bline rline">手机号码：</td>
-                            <td colspan="2" class="bline"><input type="text" name="phone" class="input"  value="{{ old('name',$user->phone) }}" style="width:200px;"/></td>
+                            <td align="right" class="bline rline"><span>*</span>手机号码：</td>
+                            <td colspan="2" class="bline"><input type="text" name="phone" class="input"  value="{{ old('phone',$user->phone) }}" style="width:200px;"/></td>
                         </tr>
 
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
-                            <td align="right" class="bline rline"><span>*</span>身份证号码：</td>
-                            <td colspan="2" class="bline"><input type="text" name="identitycard" class="input" value="{{ old('name',$user->identitycard) }}"  style="width:300px;"/></td>
+                            <td align="right" class="bline rline">身份证号码：</td>
+                            <td colspan="2" class="bline"><input type="text" name="identitycard" class="input" value="{{ old('identitycard',$user->identitycard) }}"  style="width:300px;"/></td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">&nbsp;</td>
                             <td colspan="2" class="bline"><label>
-                                    <div class="bt"><input name="" type="button"/></div>
+                                    <div class="bt"><input name=""  type="submit" style="text-indent: -999px;"/></div>
                                 </label></td>
                         </tr>
                     </table>
