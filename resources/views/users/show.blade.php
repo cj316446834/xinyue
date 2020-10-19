@@ -19,7 +19,7 @@
                         <tr>
                             <td width="145" align="right" class="rline bline">用户名：</td>
                             <td width="361" class="bline">{{ $user->name }}</td>
-                            <td width="234" rowspan="13" align="right" valign="top"><img src="/images/comment_bask_1.jpg" width="214" height="230" /></td>
+                            <td width="234" rowspan="13" align="right" valign="top"><img src="{{ $user->avatar }}" width="214"  /></td>
                             <td><a href="{{ route('users.edit', Auth::id()) }}">完善资料</a></td>
                         </tr>
 

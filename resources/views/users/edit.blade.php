@@ -15,7 +15,8 @@
             <div class="www_view">
                 <P style="padding-top:7px;"><img src="/images/member.jpg" /></P>
                 <div class="text">
-                    <form action="{{ route('users.update', $user->id) }}" method="POST" accept-charset="UTF-8">
+                    <form action="{{ route('users.update', $user->id) }}" method="POST"
+                          accept-charset="UTF-8" enctype="multipart/form-data">
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         @include('shared._error')
@@ -32,7 +33,12 @@
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">上传头像：</td>
-                            <td colspan="2" class="bline"><input type="text" name="avatar" class="input" style="width:300px;"/></td>
+                            <td colspan="2" class="bline"><input type="file" name="avatar" class="input" style="width:300px;"/>
+                                @if($user->avatar)
+                                    <br>
+                                    <img class="thumbnail img-responsive" src="{{ $user->avatar }}" width="200" />
+                                @endif
+                            </td>
                         </tr>
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline"><span>*</span>性别：</td>
