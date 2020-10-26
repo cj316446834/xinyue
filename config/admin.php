@@ -272,7 +272,7 @@ return [
                         ],
                 ],
                 'theme' => 'snow',
-                'height' => '200px',
+                'height' => '400px',
             ]
         ]
         // 新增编辑器配置结束

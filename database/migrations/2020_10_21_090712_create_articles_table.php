@@ -18,8 +18,8 @@ class CreateArticlesTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->string('title');
-            $table->string('description');
-            $table->string('image');
+            $table->string('description')->nullable();
+            $table->string('image')->nullable();
             $table->text('body');
             $table->integer('sortrank')->default(0)->comment('排序');
             $table->timestamps();
