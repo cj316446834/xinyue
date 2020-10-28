@@ -30,9 +30,9 @@ class ArticlesController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('category.name', __('所属栏目'));
         $grid->column('title', __('标题'));
-        $grid->column('description', __('摘要'));
+//        $grid->column('description', __('摘要'));
         $grid->column('image', __('缩略图'));
-        $grid->column('body', __('内容'));
+//        $grid->column('body', __('内容'));
         $grid->column('sortrank', __('排序'));
         $grid->column('created_at', __('创建时间'));
         $grid->column('updated_at', __('更新时间'));

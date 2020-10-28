@@ -25,6 +25,16 @@ class Category extends Model
         $this->setTitleColumn('name'); // 设置标题名称
     }
 
+    public function parent()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Category::class, 'reid');
+    }
+
     public function article()
     {
         return $this->hasMany(Category::class);
