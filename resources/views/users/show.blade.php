@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('style')
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
-
+@endsection
 @section('title', $user->name . ' 的个人中心')
 
 @section('content')
@@ -25,7 +25,15 @@
 
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">
                             <td align="right" class="bline rline">性别：</td>
-                            <td class="bline">{{ $user->sex }}</td>
+                            <td class="bline">
+                                @if ($user->sex == 1)
+                                    男
+                                @elseif ($user->sex == 2)
+                                   女
+                                    @else
+                                    保密
+                                @endif
+                            </td>
                         </tr>
                         <!--
                         <tr onMouseOver="this.className='mover_comm'" onMouseOut="this.className=''">

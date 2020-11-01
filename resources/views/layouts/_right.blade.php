@@ -8,7 +8,7 @@
             <li onMouseOver="this.className='member_m'" onMouseOut="this.className=''"><a href="#" target="_blank" class="suburl">我的团购</a></li>
             <li onMouseOver="this.className='member_m'" onMouseOut="this.className=''"><a href="{{ route('users.edit', Auth::id()) }}" target="_blank" class="suburl">完善资料</a></li>
             <li onMouseOver="this.className='member_m'" onMouseOut="this.className=''"><a href="{{ route('user_addresses.index') }}" target="_blank" class="suburl">收货地址</a></li>
-            <li onMouseOver="this.className='member_m'" onMouseOut="this.className=''"><a href="#" target="_blank" class="suburl">修改密码</a></li>
+            <li onMouseOver="this.className='member_m'" onMouseOut="this.className=''"><a href="{{ route('password.update') }}" target="_blank" class="suburl">重置密码</a></li>
         </ul>
     </div>
 

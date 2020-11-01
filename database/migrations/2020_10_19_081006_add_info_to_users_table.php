@@ -14,7 +14,7 @@ class AddInfoToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('sex')->default('女');
+            $table->enum('sex', [1,2,3])->default('2');
             $table->string('avatar')->nullable();
             $table->string('interest')->nullable();
             $table->string('yawp')->nullable();

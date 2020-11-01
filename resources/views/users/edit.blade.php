@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('style')
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
-
+@endsection
 @section('title', $user->name . ' 的个人中心')
 
 @section('content')
@@ -44,12 +44,18 @@
                             <td align="right" class="bline rline"><span>*</span>性别：</td>
                             <td colspan="2" class="bline">
                                 <select name="sex" id="sex">
-                                    @if (old('sex',$user->sex) == '女')
-                                        <option value="女">女</option>
-                                        <option value="男">男</option>
+                                    @if (old('sex',$user->sex) == 1)
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                        <option value="3">保密</option>
+                                        @elseif (old('sex',$user->sex) == 2)
+                                        <option value="2">女</option>
+                                        <option value="1">男</option>
+                                        <option value="3">保密</option>
                                         @else
-                                        <option value="男">男</option>
-                                        <option value="女">女</option>
+                                        <option value="3">保密</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
                                     @endif
 
                                 </select>

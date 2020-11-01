@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('style')
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
-
+@endsection
 @section('title', '新增收货地址')
 
 @section('content')
