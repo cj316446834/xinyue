@@ -106,9 +106,9 @@ a.suburl:hover {color:#e8e8e8;text-decoration:none;}
 #div_ftnav  .fn_l_a .l_a_l{ width:103px; height:280px; float:left;}
 #div_ftnav  .fn_l_a .l_a_r{ width:235px; height:280px; float:right; line-height:30px;}
 
-#div_ftnav  .fn_l_b{ width:186px; height:280px; float:right;}
-#div_ftnav  .fn_l_b .l_b_l{ width:103px; height:280px; float:left;}
-#div_ftnav  .fn_l_b .l_b_r{ width:83px; height:280px; float:right; line-height:30px;}
+#div_ftnav  .fn_l_a:last-child{ width:186px; height:280px; float:right;}
+#div_ftnav  .fn_l_a:last-child .l_a_l{ width:103px; height:280px; float:left;}
+#div_ftnav  .fn_l_a:last-child .l_a_r{ width:83px; height:280px; float:right; line-height:30px;}
 
 #div_service{
 	width:100%;
