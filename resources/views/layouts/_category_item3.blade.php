@@ -1,0 +1,1 @@
+<li><a href="{{ route('products.index', ['category_id' => $category['id']]) }}">{{ $category['name'] }}</a></li>

@@ -20,7 +20,7 @@
 
 /*---------------品牌文化中心---------------*/
 #brand{width:800px;height:160px; margin:15px 0 0 15px;}
-#brand ul{ height:120px; float:left; text-align:left;margin-right:10px;width:120px;*width:120px;_width:120px;float:left;}
+#brand ul{ height:120px; float:left; text-align:left;margin-right:10px;width:280px;*width:280px;_width:280px;float:left;}
 #brand ul.li_content li{line-height:30px; text-align:left;height:30px; padding-left:18px;width:120px;}
 #brand ul.li_content li a{ margin-left:6px; font-size:14px;height:30px; line-height:30px;}
 #brand ul.li_content li a:hover{line-height:30px; height:30px; text-decoration: underline;}
@@ -67,9 +67,9 @@
 
 /*---------------私密整形中心---------------*/
 #privacy{width:880px;height:130px; margin:15px 0 0 15px;}
-#privacy ul{  height:140px; float:left; text-align:left;margin-right:5px;width:125px;*width:125px;_width:125px;float:left;}
+#privacy ul{  height:140px; float:left; text-align:left;margin-right:5px;width:260px;*width:260px;_width:260px;float:left;}
 #privacy .ul2{  height:140px; float:left; text-align:left;margin-right:5px;width:150px;*width:150px;_width:150px;float:left;}
-#privacy ul.li_content li{line-height:30px;height:30px; text-align:left; padding-left:10px; font-weight:normal;width:125px;}
+#privacy ul.li_content li{line-height:30px;height:30px; text-align:left; padding-left:10px; font-weight:normal;width:120px;}
 #privacy ul.li_content li a{ font-size:14px; }
 #privacy ul.li_content li a:hover{line-height:30px; height:30px;text-decoration: underline;}
 #privacy ul.li_content li img{ padding-top:8px;}

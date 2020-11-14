@@ -27,7 +27,8 @@ Route::get('auth/weibo', 'Auth\AuthController@weibo')->name('weibo');
 // 用户授权后新浪微博回调的页面
 Route::get('auth/callback', 'Auth\AuthController@callback')->name('callback');
 
-Route::get('article/{article}','ArticlesController@index')->name('articles.show');
+Route::get('article', 'ArticlesController@index')->name('products.index');
+Route::get('article/{article}','ArticlesController@show')->name('articles.show');
 
 // auth 中间件代表需要登录，verified中间件代表需要经过邮箱验证
 Route::group(['middleware' => ['auth', 'verified']], function() {
@@ -39,5 +40,6 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::put('user_addresses/{user_address}', 'UserAddressesController@update')->name('user_addresses.update');
     Route::delete('user_addresses/{user_address}', 'UserAddressesController@destroy')->name('user_addresses.destroy');
 });
+
 
 

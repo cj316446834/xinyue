@@ -71,8 +71,13 @@ class ArticlesController extends AdminController
     protected function form()
     {
         $form = new Form(new Article());
-        $categoryData = (new Category())->getAll();
-        $form->select('category_id', __('所属分类'))->options($categoryData)->rules('required');
+        //$categoryData = (new Category())->getAll();
+        $form->select('category_id', __('所属分类'))->options(function ($id) {
+            $category = Category::find($id);
+            if ($category) {
+                return [$category->id => $category->full_name];
+            }
+        })->ajax('/admin/api/categories?is_directory=0');
         $form->text('title', __('标题'))->rules('required');
         $form->text('description', __('摘要'));
         $form->image('image', __('缩略图'));

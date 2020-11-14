@@ -91,13 +91,13 @@ class Category extends Model
     }
 
     //增加select返回数据接口
-    public function getAll()
-    {
-        $res=$this->get();
-        $tmp=[];
-        foreach($res as $v){
-            $tmp[$v->id]=$v->name;
-        }
-        return $tmp;
-    }
+//    public function getAll()
+//    {
+//        $res=$this->get();
+//        $tmp=[];
+//        foreach($res as $v){
+//            $tmp[$v->id]=$v->name;
+//        }
+//        return $tmp;
+//    }
 }
