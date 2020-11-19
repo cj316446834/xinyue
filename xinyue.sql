@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50727
 File Encoding         : 65001
 
-Date: 2020-11-13 17:38:18
+Date: 2020-11-16 17:37:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,7 +30,7 @@ CREATE TABLE `admin_menu` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_menu
@@ -46,6 +46,11 @@ INSERT INTO `admin_menu` VALUES ('9', '0', '2', '用户管理', 'fa-users', '/us
 INSERT INTO `admin_menu` VALUES ('10', '0', '9', '文章管理', 'fa-500px', null, null, '2020-10-23 06:12:13', '2020-10-23 06:12:35');
 INSERT INTO `admin_menu` VALUES ('11', '10', '10', '栏目管理', 'fa-bars', '/categories', null, '2020-10-23 06:13:38', '2020-10-26 13:55:20');
 INSERT INTO `admin_menu` VALUES ('12', '10', '11', '文章列表', 'fa-chain', '/articles', null, '2020-10-23 06:14:25', '2020-10-26 13:55:20');
+INSERT INTO `admin_menu` VALUES ('13', '0', '11', 'Helpers', 'fa-gears', '', null, '2020-11-16 06:16:00', '2020-11-16 06:16:00');
+INSERT INTO `admin_menu` VALUES ('14', '13', '12', 'Scaffold', 'fa-keyboard-o', 'helpers/scaffold', null, '2020-11-16 06:16:00', '2020-11-16 06:16:00');
+INSERT INTO `admin_menu` VALUES ('15', '13', '13', 'Database terminal', 'fa-database', 'helpers/terminal/database', null, '2020-11-16 06:16:00', '2020-11-16 06:16:00');
+INSERT INTO `admin_menu` VALUES ('16', '13', '14', 'Laravel artisan', 'fa-terminal', 'helpers/terminal/artisan', null, '2020-11-16 06:16:00', '2020-11-16 06:16:00');
+INSERT INTO `admin_menu` VALUES ('17', '13', '15', 'Routes', 'fa-list-alt', 'helpers/routes', null, '2020-11-16 06:16:00', '2020-11-16 06:16:00');
 
 -- ----------------------------
 -- Table structure for `admin_operation_log`
@@ -62,7 +67,7 @@ CREATE TABLE `admin_operation_log` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `admin_operation_log_user_id_index` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1115 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1132 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -1181,6 +1186,23 @@ INSERT INTO `admin_operation_log` VALUES ('1111', '1', 'admin/api/categories', '
 INSERT INTO `admin_operation_log` VALUES ('1112', '1', 'admin/api/categories', 'GET', '192.168.10.1', '{\"is_directory\":\"0\",\"q\":\"\\u4e30\"}', '2020-11-07 08:52:37', '2020-11-07 08:52:37');
 INSERT INTO `admin_operation_log` VALUES ('1113', '1', 'admin/articles/1', 'PUT', '192.168.10.1', '{\"category_id\":\"25\",\"title\":\"\\u73bb\\u5c3f\\u9178\\u6ce8\\u5c04\\u4e30\\u989d\\u5934\\u7684\\u6ce8\\u610f\\u4e8b\\u9879\",\"description\":\"\\u7cbe\\u81f4\\u7626\\u5c0f\\u7684\\u5df4\\u638c\\u8138\\u80fd\\u591f\\u8ba9\\u5973\\u6027\\u66f4\\u663e\\u5a07\\u5a9a\\u4e4b\\u611f\\uff0c\\u770b\\u8d77\\u6765\\u66f4\\u52a0\\u8212\\u670d\\u7f8e\\u4e3d\\u3002\\u6240\\u4ee5\\uff0c\\u5f53\\u524d\\u5f88\\u591a\\u88ab\\u9762\\u90e8\\u80a5\\u5927\\u95ee\\u9898\\u6240\\u56f0\\u6270\\u7684\\u7231\\u7f8e\\u8005\\u5c31\\u7eb7\\u7eb7\\u9009\\u62e9\\u4e86\\u505a\\u6ce8\\u5c04\\u7626\\u8138\\u3002\\u90a3\\u4e48\\uff0c\\u6ce8\\u5c04\\u7626\\u8138\\u4f1a\\u6709\\u526f\\u4f5c\\u7528\\u5417\\uff1f\\u4e0b\\u9762\\u8ba9\\u6b66\\u6c49\\u6b23\\u60a6\\u6574\\u5f62\\u7f8e\\u5bb9\\u533b\\u9662\\u7684\\u4e13\\u5bb6\\u6765\\u7ed9\\u5927\\u5bb6\\u8bb2\\u89e3\\u4e00...\",\"body\":\"<p>\\u7cbe\\u81f4\\u7626\\u5c0f\\u7684\\u5df4\\u638c\\u8138\\u80fd\\u591f\\u8ba9\\u5973\\u6027\\u66f4\\u663e\\u5a07\\u5a9a\\u4e4b\\u611f\\uff0c\\u770b\\u8d77\\u6765\\u66f4\\u52a0\\u8212\\u670d\\u7f8e\\u4e3d\\u3002\\u6240\\u4ee5\\uff0c\\u5f53\\u524d\\u5f88\\u591a\\u88ab\\u9762\\u90e8\\u80a5\\u5927\\u95ee\\u9898\\u6240\\u56f0\\u6270\\u7684\\u7231\\u7f8e\\u8005\\u5c31\\u7eb7\\u7eb7\\u9009\\u62e9\\u4e86\\u505a\\u6ce8\\u5c04\\u7626\\u8138\\u3002\\u90a3\\u4e48\\uff0c\\u6ce8\\u5c04\\u7626\\u8138\\u4f1a\\u6709\\u526f\\u4f5c\\u7528\\u5417\\uff1f\\u4e0b\\u9762\\u8ba9\\u6b66\\u6c49\\u6b23\\u60a6\\u6574\\u5f62\\u7f8e\\u5bb9\\u533b\\u9662\\u7684\\u4e13\\u5bb6\\u6765\\u7ed9\\u5927\\u5bb6\\u8bb2\\u89e3\\u4e00\\u4e0b\\u3002<\\/p><p><br><\\/p><p>&nbsp;\\u636e\\u6b66\\u6c49\\u6b23\\u60a6\\u6574\\u5f62\\u7f8e\\u5bb9\\u533b\\u9662\\u4e13\\u5bb6\\u4ecb\\u7ecd\\u8bf4\\uff0c\\u6ce8\\u5c04\\u7626\\u8138\\u5c31\\u662f\\u7528\\u836f\\u7269(\\u8089\\u6bd2\\u7d20)\\u963b\\u65ad\\u795e\\u7ecf\\u4e0e\\u808c\\u8089\\u7684\\u795e\\u7ecf\\u51b2\\u52a8\\uff0c\\u9ebb\\u75f9\\u8fc7\\u4e8e\\u53d1\\u8fbe\\u7684\\u808c\\u8089\\u4f7f\\u4e4b\\u6536\\u7f29\\uff0c\\u5b83\\u662f\\u5229\\u7528\\u9ebb\\u75f9\\u808c\\u8089\\u6765\\u8fbe\\u5230\\u201c\\u5931\\u80fd\\u6027\\u7684\\u840e\\u7f29\\u201d\\u7684\\u76ee\\u7684\\uff0c\\u4f7f\\u7684\\u539f\\u672c\\u80a5\\u539a\\u589e\\u751f\\u7684\\u808c\\u8089\\u7f29\\u5c0f\\uff0c\\u4e5f\\u5c31\\u8fbe\\u5230\\u4e86\\u7626\\u8138\\u7684\\u529f\\u6548\\u3002\\u90a3\\u4e48\\uff0c\\u6ce8\\u5c04\\u7626\\u8138\\u4f1a\\u6709\\u526f\\u4f5c\\u7528\\u5417\\uff1f\\u6ce8\\u5c04\\u7626\\u8138\\u5728\\u5b89\\u5168\\u5242\\u91cf\\u4e4b\\u5185\\u662f\\u4e0d\\u4f1a\\u51fa\\u73b0\\u4efb\\u4f55\\u526f\\u4f5c\\u7528\\u7684\\uff0c\\u4f46\\u662f\\u5982\\u679c\\u8fc7\\u91cf\\u6ce8\\u5c04\\u6216\\u6ce8\\u5c04\\u65b9\\u6cd5\\u6709\\u95ee\\u9898\\uff0c\\u6216\\u8005\\u4e0e\\u5176\\u4ed6\\u4e00\\u4e9b\\u6297\\u751f\\u7d20\\u540c\\u65f6\\u4f7f\\u7528\\uff0c\\u53ef\\u80fd\\u4f1a\\u4ea7\\u751f\\u4e00\\u4e9b\\u526f\\u4f5c\\u7528\\u3002\\u4e3b\\u8981\\u8868\\u73b0\\u6709\\uff1a\\u9762\\u90e8\\u5982\\u679c\\u6253\\u5f97\\u8fc7\\u91cf\\uff0c\\u53ef\\u80fd\\u9020\\u6210\\u541e\\u54bd\\u56f0\\u96be\\uff1b\\u9762\\u90e8\\u4f1a\\u53d8\\u5f97\\u50f5\\u786c\\uff0c\\u7b11\\u5bb9\\u4e0d\\u81ea\\u7136\\uff1b\\u6709\\u5c40\\u90e8\\u7684\\u80bf\\u80c0\\u4ee5\\u53ca\\u53d1\\u70ed\\u8868\\u73b0\\u3002\\u4e00\\u822c\\u8fd9\\u4e9b\\u4e34\\u5e8a\\u8868\\u73b0\\u4e3a\\u4e00\\u8fc7\\u6027\\u7684\\uff0c\\u5e76\\u5728\\u6570\\u5468\\u5185\\u81ea\\u884c\\u6d88\\u5931\\u3002\\u6c42\\u7f8e\\u8005\\u5927\\u53ef\\u4e0d\\u5fc5\\u62c5\\u5fc3\\uff0c\\u6ce8\\u5c04\\u524d\\u4e00\\u5b9a\\u8981\\u9009\\u62e9\\u6b63\\u89c4\\u4e13\\u4e1a\\u7684\\u6574\\u5f62\\u7f8e\\u5bb9\\u673a\\u6784\\uff0c\\u627e\\u4e13\\u4e1a\\u7684\\u533b\\u5e08\\u8fdb\\u884c\\u6ce8\\u5c04\\u7626\\u8138\\uff0c\\u786e\\u4fdd\\u5b89\\u5168\\u548c\\u6548\\u679c\\uff0c\\u907f\\u514d\\u4e00\\u4e9b\\u4e0d\\u9700\\u8981\\u7684\\u526f\\u4f5c\\u7528\\u3002<\\/p><p>&nbsp;&nbsp;<\\/p><p>\\u76f8\\u4fe1\\u7ecf\\u8fc7\\u4ee5\\u4e0a\\u7684\\u63cf\\u8ff0\\uff0c\\u60a8\\u5df2\\u7ecf\\u5f88\\u4e86\\u89e3\\u4e86\\u3002\\u6b66\\u6c49\\u6b23\\u60a6\\u63d0\\u9192\\u60a8\\uff1a\\u4e3a\\u4e86\\u60a8\\u7684\\u5b89\\u5168\\u548c\\u624b\\u672f\\u6548\\u679c\\uff0c\\u8bf7\\u52a1\\u5fc5\\u5230\\u4e13\\u4e1a\\u7684\\u5927\\u578b\\u7f8e\\u5bb9\\u6574\\u5f62\\u533b\\u9662\\u505a\\u624b\\u672f\\u3002\\u5982\\u679c\\u60a8\\u8fd8\\u6709\\u4ec0\\u4e48\\u7591\\u95ee\\u3002\\u8bf7\\u54a8\\u8be2\\u6211\\u4eec\\u6b66\\u6c49\\u6b23\\u60a6\\u6574\\u5f62\\u7f8e\\u5bb9\\u533b\\u9662\\u7684\\u5728\\u7ebf\\u4e13\\u5bb6\\uff0c\\u54a8\\u8be2\\u70ed\\u7ebf\\uff1a027-85559090\\uff0c\\u6211\\u4eec\\u7684\\u4e13\\u5bb6\\u5c06\\u4e3a\\u60a8\\u63d0\\u4f9b\\u6700\\u4e13\\u4e1a\\u7684\\u56de\\u7b54\\u3002<\\/p><p>&nbsp;&nbsp;<\\/p><p>\\u636e\\u6b66\\u6c49\\u6b23\\u60a6\\u6574\\u5f62\\u7f8e\\u5bb9\\u533b\\u9662\\u4e13\\u5bb6\\u4ecb\\u7ecd\\u8bf4\\uff0c\\u6ce8\\u5c04\\u7626\\u8138\\u5c31\\u662f\\u7528\\u836f\\u7269(\\u8089\\u6bd2\\u7d20)\\u963b\\u65ad\\u795e\\u7ecf\\u4e0e\\u808c\\u8089\\u7684\\u795e\\u7ecf\\u51b2\\u52a8\\uff0c\\u9ebb\\u75f9\\u8fc7\\u4e8e\\u53d1\\u8fbe\\u7684\\u808c\\u8089\\u4f7f\\u4e4b\\u6536\\u7f29\\uff0c\\u5b83\\u662f\\u5229\\u7528\\u9ebb\\u75f9\\u808c\\u8089\\u6765\\u8fbe\\u5230\\u201c\\u5931\\u80fd\\u6027\\u7684\\u840e\\u7f29\\u201d\\u7684\\u76ee\\u7684\\uff0c\\u4f7f\\u7684\\u539f\\u672c\\u80a5\\u539a\\u589e\\u751f\\u7684\\u808c\\u8089\\u7f29\\u5c0f\\uff0c\\u4e5f\\u5c31\\u8fbe\\u5230\\u4e86\\u7626\\u8138\\u7684\\u529f\\u6548\\u3002\\u90a3\\u4e48\\uff0c\\u6ce8\\u5c04\\u7626\\u8138\\u4f1a\\u6709\\u526f\\u4f5c\\u7528\\u5417\\uff1f\\u6ce8\\u5c04\\u7626\\u8138\\u5728\\u5b89\\u5168\\u5242\\u91cf\\u4e4b\\u5185\\u662f\\u4e0d\\u4f1a\\u51fa\\u73b0\\u4efb\\u4f55\\u526f\\u4f5c\\u7528\\u7684\\uff0c\\u4f46\\u662f\\u5982\\u679c\\u8fc7\\u91cf\\u6ce8\\u5c04\\u6216\\u6ce8\\u5c04\\u65b9\\u6cd5\\u6709\\u95ee\\u9898\\uff0c\\u6216\\u8005\\u4e0e\\u5176\\u4ed6\\u4e00\\u4e9b\\u6297\\u751f\\u7d20\\u540c\\u65f6\\u4f7f\\u7528\\uff0c\\u53ef\\u80fd\\u4f1a\\u4ea7\\u751f\\u4e00\\u4e9b\\u526f\\u4f5c\\u7528\\u3002\\u4e3b\\u8981\\u8868\\u73b0\\u6709\\uff1a\\u9762\\u90e8\\u5982\\u679c\\u6253\\u5f97\\u8fc7\\u91cf\\uff0c\\u53ef\\u80fd\\u9020\\u6210\\u541e\\u54bd\\u56f0\\u96be\\uff1b\\u9762\\u90e8\\u4f1a\\u53d8\\u5f97\\u50f5\\u786c\\uff0c\\u7b11\\u5bb9\\u4e0d\\u81ea\\u7136\\uff1b\\u6709\\u5c40\\u90e8\\u7684\\u80bf\\u80c0\\u4ee5\\u53ca\\u53d1\\u70ed\\u8868\\u73b0\\u3002\\u4e00\\u822c\\u8fd9\\u4e9b\\u4e34\\u5e8a\\u8868\\u73b0\\u4e3a\\u4e00\\u8fc7\\u6027\\u7684\\uff0c\\u5e76\\u5728\\u6570\\u5468\\u5185\\u81ea\\u884c\\u6d88\\u5931\\u3002\\u6c42\\u7f8e\\u8005\\u5927\\u53ef\\u4e0d\\u5fc5\\u62c5\\u5fc3\\uff0c\\u6ce8\\u5c04\\u524d\\u4e00\\u5b9a\\u8981\\u9009\\u62e9\\u6b63\\u89c4\\u4e13\\u4e1a\\u7684\\u6574\\u5f62\\u7f8e\\u5bb9\\u673a\\u6784\\uff0c\\u627e\\u4e13\\u4e1a\\u7684\\u533b\\u5e08\\u8fdb\\u884c\\u6ce8\\u5c04\\u7626\\u8138\\uff0c\\u786e\\u4fdd\\u5b89\\u5168\\u548c\\u6548\\u679c\\uff0c\\u907f\\u514d\\u4e00\\u4e9b\\u4e0d\\u9700\\u8981\\u7684\\u526f\\u4f5c\\u7528\\u3002<\\/p>\",\"sortrank\":\"1\",\"_token\":\"Us6AG8NXJs3Lo6rQHSmdD8eQSEdNNKN8ew1TTH4N\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/xinyue.test\\/admin\\/articles\"}', '2020-11-07 08:52:42', '2020-11-07 08:52:42');
 INSERT INTO `admin_operation_log` VALUES ('1114', '1', 'admin/articles', 'GET', '192.168.10.1', '[]', '2020-11-07 08:52:42', '2020-11-07 08:52:42');
+INSERT INTO `admin_operation_log` VALUES ('1115', '1', 'admin', 'GET', '192.168.10.1', '[]', '2020-11-16 05:50:01', '2020-11-16 05:50:01');
+INSERT INTO `admin_operation_log` VALUES ('1116', '1', 'admin/users', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-11-16 05:50:44', '2020-11-16 05:50:44');
+INSERT INTO `admin_operation_log` VALUES ('1117', '1', 'admin', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-11-16 05:51:04', '2020-11-16 05:51:04');
+INSERT INTO `admin_operation_log` VALUES ('1118', '1', 'admin/categories', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-11-16 05:51:10', '2020-11-16 05:51:10');
+INSERT INTO `admin_operation_log` VALUES ('1119', '1', 'admin/categories', 'GET', '192.168.10.1', '[]', '2020-11-16 05:56:05', '2020-11-16 05:56:05');
+INSERT INTO `admin_operation_log` VALUES ('1120', '1', 'admin/categories', 'GET', '192.168.10.1', '[]', '2020-11-16 06:15:34', '2020-11-16 06:15:34');
+INSERT INTO `admin_operation_log` VALUES ('1121', '1', 'admin/categories', 'GET', '192.168.10.1', '[]', '2020-11-16 06:16:07', '2020-11-16 06:16:07');
+INSERT INTO `admin_operation_log` VALUES ('1122', '1', 'admin', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-11-16 06:16:11', '2020-11-16 06:16:11');
+INSERT INTO `admin_operation_log` VALUES ('1123', '1', 'admin/helpers/scaffold', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-11-16 06:16:36', '2020-11-16 06:16:36');
+INSERT INTO `admin_operation_log` VALUES ('1124', '1', 'admin/helpers/terminal/database', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-11-16 06:16:49', '2020-11-16 06:16:49');
+INSERT INTO `admin_operation_log` VALUES ('1125', '1', 'admin/helpers/terminal/artisan', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-11-16 06:17:03', '2020-11-16 06:17:03');
+INSERT INTO `admin_operation_log` VALUES ('1126', '1', 'admin/helpers/routes', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-11-16 06:17:11', '2020-11-16 06:17:11');
+INSERT INTO `admin_operation_log` VALUES ('1127', '1', 'admin/helpers/scaffold', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-11-16 06:17:40', '2020-11-16 06:17:40');
+INSERT INTO `admin_operation_log` VALUES ('1128', '1', 'admin/helpers/scaffold', 'POST', '192.168.10.1', '{\"table_name\":\"adverts\",\"model_name\":\"App\\\\Models\\\\Advert\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\AdvertController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\"],\"fields\":[{\"name\":\"advert_title\",\"type\":\"string\",\"key\":null,\"default\":null,\"comment\":\"\\u5e7f\\u544a\\u6807\\u9898\"}],\"timestamps\":\"on\",\"soft_deletes\":\"on\",\"primary_key\":\"id\",\"_token\":\"A1XEEww2cfRlIi8rPGn2BqtYvksYH1XHcezgWO8B\"}', '2020-11-16 07:12:14', '2020-11-16 07:12:14');
+INSERT INTO `admin_operation_log` VALUES ('1129', '1', 'admin/helpers/scaffold', 'GET', '192.168.10.1', '[]', '2020-11-16 07:12:15', '2020-11-16 07:12:15');
+INSERT INTO `admin_operation_log` VALUES ('1130', '1', 'admin/helpers/scaffold', 'POST', '192.168.10.1', '{\"table_name\":\"adverts\",\"model_name\":\"App\\\\Models\\\\Advert\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\AdvertController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\"],\"fields\":[{\"name\":\"advert_title\",\"type\":\"string\",\"key\":null,\"default\":null,\"comment\":\"\\u5e7f\\u544a\\u6807\\u9898\"}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"A1XEEww2cfRlIi8rPGn2BqtYvksYH1XHcezgWO8B\"}', '2020-11-16 07:22:01', '2020-11-16 07:22:01');
+INSERT INTO `admin_operation_log` VALUES ('1131', '1', 'admin/helpers/scaffold', 'GET', '192.168.10.1', '[]', '2020-11-16 07:22:02', '2020-11-16 07:22:02');
 
 -- ----------------------------
 -- Table structure for `admin_permissions`
@@ -1197,7 +1219,7 @@ CREATE TABLE `admin_permissions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `admin_permissions_name_unique` (`name`),
   UNIQUE KEY `admin_permissions_slug_unique` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_permissions
@@ -1208,6 +1230,7 @@ INSERT INTO `admin_permissions` VALUES ('3', 'Login', 'auth.login', '', '/auth/l
 INSERT INTO `admin_permissions` VALUES ('4', 'User setting', 'auth.setting', 'GET,PUT', '/auth/setting', null, null);
 INSERT INTO `admin_permissions` VALUES ('5', 'Auth management', 'auth.management', '', '/auth/roles\r\n/auth/permissions\r\n/auth/menu\r\n/auth/logs', null, null);
 INSERT INTO `admin_permissions` VALUES ('6', '用户管理', 'users', '', '/users*', '2020-10-18 15:57:22', '2020-10-18 15:57:22');
+INSERT INTO `admin_permissions` VALUES ('7', 'Admin helpers', 'ext.helpers', '', '/helpers/*', '2020-11-16 06:16:00', '2020-11-16 06:16:00');
 
 -- ----------------------------
 -- Table structure for `admin_role_menu`

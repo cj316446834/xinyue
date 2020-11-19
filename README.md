@@ -1,61 +1,159 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Laravel+Laravel-admin整形美容电商+内容发布系统
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+### 安装说明
 
-## About Laravel
+##### 版本要求
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+PHP >= 7.0
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Laravel >= 7.2
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel-admin  = 1.7.15
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+###### 1、克隆代码
 
-## Laravel Sponsors
+```
+git clone https://github.com/cj316446834/xinyue
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+###### 2、安装 php 依赖
 
-### Premium Partners
+​	① 使用阿里云镜像：
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+```
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+```
 
-## Contributing
+​	② 进入项目目录使用 composer 安装依赖：
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+composer install
+```
 
-## Code of Conduct
+###### 3、安装 Nodejs 依赖
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+​	① 安装 Nodejs 依赖，同样先配置镜像加速：
 
-## Security Vulnerabilities
+```
+yarn config set registry https://registry.npm.taobao.org
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+​	② 使用 yarn 命令安装 Nodejs 依赖：
 
-## License
+```
+SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass yarn
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+​	③ 安装完成后编译前段代码：
+
+```
+yarn dev
+```
+
+###### 4、配置 .env 文件
+
+​	① 先从 .env.example 复制一份出来：
+
+```
+cp .env.example .env
+```
+
+​	② 修改 .env 文件
+
+```
+APP_NAME=            //网站名
+.
+.
+.
+APP_URL=              //域名
+.
+.
+.
+//数据库配置
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+.
+.
+.
+QUEUE_CONNECTION=redis  //消息队列
+.
+.
+.
+//邮件配置
+MAIL_MAILER=smtp
+MAIL_HOST=127.0.0.1
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=
+MAIL_FROM_NAME="${APP_NAME}"
+.
+.
+.
+//QQ登录配置
+QQ_KEY=
+QQ_SECRET=
+QQ_REDIRECT_URI={APP_URL}/user/get_user_info  //回调地址
+
+WEIBO_KEY=
+WEIBO_SECRET=
+WEIBO_REDIRECT_URI={APP_URL}/auth/weibo  //回调地址
+```
+
+​	③ 然后我们通过 Laravel 的命令自动生成 APP_KEY 值：
+
+```
+php artisan key:generate
+```
+
+###### 5、创建软链
+
+```
+php artisan storage:link
+```
+
+###### 6、初始化数据库
+
+​	① 执行数据库迁移：
+
+```
+php artisan migrate
+```
+
+​	② 导入管理后台数据：
+
+```
+php artisan db:seed --class=AdminTablesSeeder
+```
+
+​	③ 创建后台用户：
+
+```
+php artisan admin:create-user
+```
+
+​	注：输入密码的时候并不会有回显，输入密码之后回车即可。
+
+​	后台登录地址 /admin/auth/login
+
+------
+
+### 功能说明
+
+1、用户管理
+
+2、收货地址
+
+3、栏目管理
+
+4、文章管理
+
+5、QQ、微博登录
+
+6、订单 购物车模块 
+
+7、秒杀、团购 
