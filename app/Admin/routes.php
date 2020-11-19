@@ -14,5 +14,6 @@ Route::group([
     $router->resource('categories',CategoriesController::class);
     $router->get('api/categories', 'CategoriesController@apiIndex');
     $router->resource('articles', ArticlesController::class);
-
+    $router->resource('advert-types', AdvertTypeController::class);
+    $router->resource('adverts', AdvertController::class);
 });
