@@ -26,7 +26,11 @@ class AdvertController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Advert());
-
+        $grid->column('id','ID')->sortable();
+        $grid->column('advert_type.advert_type_name','广告分类');
+        $grid->column('advert_desc','标题');
+        $grid->column('image','图片')->image('',200,100);
+        $grid->column('url','链接');
 
 
         return $grid;

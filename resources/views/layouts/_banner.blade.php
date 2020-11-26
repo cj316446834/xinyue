@@ -56,34 +56,24 @@
 
         <div id="mainvisual">
             <!-- slider code -->
+
             <div id="slider">
                 <div id="items">
-                    <!-- slide 1 -->
-                    <div style="width: 1903px;">
-                        <div class="content slides_jpg1">
-                            <a href="#" target="_blank">
-                                <div class="theme_url"><img src="/images/theme_url_1.jpg" /></div>
-                            </a>
-                        </div>
-                    </div>
 
-                    <!-- slide 2 -->
+                    @foreach($adverts as $advert)
+                        <!-- slide {{ $loop->iteration }} -->
+                    @if($advert['advert_type_id'] == 1)
                     <div style="width: 1903px;">
-                        <div class="content slides_jpg2">
-                            <a href="#" target="_blank">
-                                <div class="theme_url"><img src="/images/theme_url_2.jpg" /></div>
+                        <div class="content slides_jpg{{ $loop->iteration }}">
+                            <a href="{{ $advert['url'] }}" target="_blank">
+                                <div class="theme_url"><img src="/{{ $advert['image'] }}" /></div>
                             </a>
                         </div>
                     </div>
+                     @endif
+                    @endforeach
 
-                    <!-- slide 3 -->
-                    <div style="width: 1903px;">
-                        <div class="content slides_jpg3">
-                            <a href="#" target="_blank">
-                                <div class="theme_url"><img src="/images/theme_url_3.jpg" /></div>
-                            </a>
-                        </div>
-                    </div>
+
 
                     <!-- slide 4 -->
                     <!--<div style="width: 1903px;">

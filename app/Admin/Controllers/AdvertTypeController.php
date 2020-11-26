@@ -15,7 +15,7 @@ class AdvertTypeController extends AdminController
      *
      * @var string
      */
-    protected $title = '广告位列表管理';
+    protected $title = '广告管理';
 
     /**
      * Make a grid builder.
