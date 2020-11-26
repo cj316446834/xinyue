@@ -16,4 +16,5 @@ Route::group([
     $router->resource('articles', ArticlesController::class);
     $router->resource('advert-types', AdvertTypeController::class);
     $router->resource('adverts', AdvertController::class);
+    $router->get('products', 'ProductsController@index');
 });
